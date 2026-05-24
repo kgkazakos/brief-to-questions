@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brief-to-questions"
+version = "0.1.0"
+description = "Turn a PM brief or PRD into crisp, answerable, methodologically sound research questions."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Kostas Kazakos" }]
+requires-python = ">=3.10"
+keywords = ["ux-research", "product-research", "research-questions", "llm", "dspy", "cpr"]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+# LLM enrichment ships on by default; install the extra for your provider(s).
+llm = ["dspy-ai>=2.5", "litellm>=1.40"]
+anthropic = ["dspy-ai>=2.5", "litellm>=1.40", "anthropic>=0.34"]
+openai = ["dspy-ai>=2.5", "litellm>=1.40", "openai>=1.40"]
+gemini = ["dspy-ai>=2.5", "litellm>=1.40", "google-generativeai>=0.7"]
+ui = ["streamlit>=1.33"]
+dev = ["pytest>=7.4", "ruff>=0.4"]
+
+[project.scripts]
+brief-to-questions = "brief_to_questions.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/kgkazakos/brief-to-questions"
+Repository = "https://github.com/kgkazakos/brief-to-questions"
+
+[tool.setuptools.packages.find]
+include = ["brief_to_questions*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
