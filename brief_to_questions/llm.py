@@ -28,7 +28,7 @@ from .models import BriefElement, QuestionType, ResearchMethod, ResearchQuestion
 # constants of nature: point them at the exact model id your account can call.
 DEFAULT_MODELS: dict[str, str] = {
     "anthropic": "anthropic/claude-opus-4-7",      # Claude Opus
-    "gemini": "gemini/gemini-3.1-pro-preview",     # Gemini 3.1 Pro
+    "gemini": "gemini/gemini-4-argon",     # Gemini 4 Argon
     "openai": "openai/gpt-5.5",                    # GPT-5.5
 }
 DEFAULT_BACKEND = "anthropic"
