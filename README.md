@@ -79,7 +79,7 @@ Three backends ship **enabled by default**, all routed through [LiteLLM](https:/
 | Backend     | Default model id (configurable)     |
 |-------------|-------------------------------------|
 | `anthropic` | `anthropic/claude-opus-4-7`         |
-| `gemini`    | `gemini/gemini-3.1-pro-preview`     |
+| `gemini`    | `gemini/gemini-4-argon`     |
 | `openai`    | `openai/gpt-5.5`                    |
 
 The model ids are plain configuration in `brief_to_questions/llm.py` — point them at the exact model your account can call. Set the matching API key in your environment (`ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `OPENAI_API_KEY`). If a backend is unavailable for any reason, the tool falls back to the rule-based core automatically, so it never hard-fails.

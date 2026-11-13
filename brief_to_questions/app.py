@@ -77,7 +77,7 @@ with st.sidebar:
     backend = st.selectbox(
         "Backend",
         available_backends(),
-        format_func=lambda b: {"anthropic": "Claude Opus", "gemini": "Gemini 3.1 Pro", "openai": "GPT-5.5"}.get(b, b),
+        format_func=lambda b: {"anthropic": "Claude Opus", "gemini": "Gemini 4 Argon", "openai": "GPT-5.5"}.get(b, b),
         disabled=not use_llm,
     )
     st.caption("Backends ship on by default and run through LiteLLM. Set the matching API key in your environment.")
